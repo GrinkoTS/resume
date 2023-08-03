@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Опыт работы{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Опыт работы</h1>
+        {% if firms %}
+
+        {# Описания опыта работы #}
+
+            {% for el in firms %}
+                <div class="alert alert-warning">
+                    <h1>
+                        <a href="{% url 'job_description' el.id %}">{{ el.title }}</a>
+                    </h1>
+                    <h3>{{ el.job_title }}</h3>
+                    <p>{{ el.date }}</p>
+
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нигде не работала</p>
+        {% endif %}
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="features_index">
+        <h1>{{ title }}</h1>
+        <h2>Привет! Меня зовут Тамара и это мой сайт-резюме</h2>
+        <p>Желаемая должность: Junior Python стажер/ Junior Python developer</p>
+        <p>Желаемая зарплата: 50000 рублей</p>
+        <p>График работы: полный день</p>
+        {# добавлю кнопку с ссылкой на страницу о себе #}
+        <form action="{% url 'about' %}" method="GET">
+            <button class="btn btn-warning">На страницу о себе</button>
+        </form>
+    </div>
+{% endblock %}
